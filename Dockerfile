@@ -2,7 +2,7 @@ FROM golang:alpine as builder
 
 WORKDIR /go/src/github.com/p4tin/goaws
 
-RUN apk add --update --repository https://dl-3.alpinelinux.org/alpine/edge/testing/ git
+RUN apk add --no-cache git
 RUN go get github.com/golang/dep/cmd/dep
 
 COPY Gopkg.lock Gopkg.toml app ./
